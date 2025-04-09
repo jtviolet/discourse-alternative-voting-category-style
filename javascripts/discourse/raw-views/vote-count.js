@@ -53,9 +53,6 @@ export default class VoteCount extends EmberObject {
   @discourseComputed()
   votedStatus() {
     if (settings.vote_from_topic_list) {
-      if (this.topic.unread === undefined) {
-        return i18n(themePrefix("must_view_first"));
-      }
       if (this.topic.closed) {
         return i18n(themePrefix("closed"));
       }
