@@ -44,9 +44,7 @@ export default class VoteCount extends Component {
       return;
     }
 
-    if (this.topic.get("unread") === undefined) {
-      return i18n(themePrefix("must_view_first"));
-    } else if (this.topic.get("closed")) {
+    if (this.topic.get("closed")) {
       return i18n(themePrefix("closed"));
     } else if (
       this.currentUser?.get("votes_left") <= 0 &&
